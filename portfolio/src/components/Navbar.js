@@ -38,12 +38,10 @@ const Navmenu = styled.i`
     display : flex;
     align-items : center;
     margin-right : -48px;
-    font : normal;
 `;
 
 const NavMenuLinks = styled(Link)`
     ${Navlink}
-    font : normal;
 `;
 
 const NavBtn = styled.div`
