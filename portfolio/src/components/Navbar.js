@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import {Link } from 'react-router-dom'
 import { MenuData } from '../data/MenuData';
 import { Button } from './Button';
-
+import {FaBars} from 'react-icons/fa';
 
 const Nav = styled.nav`
     height : 60px;
@@ -32,29 +32,51 @@ const Logo = styled(Link)`
     font-style : italic;
 `;
 
-const MenuBar = styled.i``;
+const MenuBars = styled(FaBars)`
+    display : none;
+
+    @media screen and (max-width : 760px) {
+        display : block;
+        background-size: contain;
+        height : 25px;
+        width : 25px;
+        cursor : pointer
+        position : absolute;
+        top : 0;
+        right : 0;
+        transform : translateY(-50%,30%);
+    }
+`;
 
 const Navmenu = styled.i`
     display : flex;
     align-items : center;
     margin-right : -48px;
+
+    @media screen and (max-width : 760px){
+        display : none;
+    }
 `;
 
 const NavMenuLinks = styled(Link)`
     ${Navlink}
+    font-style : normal;
 `;
 
 const NavBtn = styled.div`
     display : flex;
     align-items : center;
     margin-right : 24px;
+    @media screen and (max-width : 760px){
+        display : none;
+    }
 `;
 
 const Navbar = () => {
     return (
         <Nav>
-            <Logo to="/">Cletus</Logo>
-            <MenuBar />
+            <Logo to="/">CLETUS</Logo>
+            <MenuBars />
             <Navmenu>
                 {MenuData.map((item,index) => (
                     <NavMenuLinks to = {item.link}  key={index}>
