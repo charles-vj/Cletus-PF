@@ -1,3 +1,3 @@
 # Cletus-PF
 
-web-app based on React and styled-components
+website made using React and styled-components
